@@ -1,0 +1,38 @@
+
+.main {
+    background: #ddd;
+    border-radius: 50px;
+    padding: 50px;
+  }
+
+.shopping-img img {
+    width: 36%;
+    height: 187%;
+  }
+  .first-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}
+  .item-count input {
+    width: 35px;
+    height: 28px;
+    background: #ddd;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .iconbtn {
+    background: transparent;
+    border: none;
+  }
+  .item-delete {
+    font-size: 18px;
+    color: tomato;
+}
+.displayto {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

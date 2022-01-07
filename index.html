@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.min.css">
+    <!-- link css -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      
+
+    <section>
+        <div class="main-container">
+            <div class="container main mt-5">
+                <div class="row first-item mb-5">
+                   
+                        <div class="col-md-4">
+                            <div class="shopping-img h-50 w-50">
+                                <img src="img/iphone.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-4 displayto">
+                            <div class="item-details">
+                                <h5>Iphone 12 62GB black</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-2 displayto">
+                            <div class="item-count">
+                                <button class= "iconbtn"><i class="fa fa-minus minusBtns" id="minusOne" aria-hidden="true"></i></button>
+                                <input type="text" value="1" id="count-items"  class="items-count">
+                                <button class= "iconbtn "><i class="fa fa-plus plusbtn" id="plusButtons"  aria-hidden="true"></i></i></button>
+                            </div>
+                        </div>
+                        <div class="col-md-1 displayto">
+                            <div class="item-price">
+                                <h5>$<span id="amount">1100</span></h5>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-1 displayto">
+                            <div class="item text-right">
+                                <a href="#"  class="item-delete"><i class="fa fa-times" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    
+                </div>
+                <div class="row first-item mb-5">
+                   
+                        <div class="col-md-4">
+                            <div class="shopping-img h-50 w-50">
+                                <img src="img/icover.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-4 displayto">
+                            <div class="item-details">
+                                <h5>Iphone slicon case</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-2 displayto">
+                            <div class="item-count">
+                                <button class= "iconbtn"><i class="fa fa-minus" id="minusTwo" i aria-hidden="true"></i></button>
+                                <input type="text" value="1" id="count-item" class="items-count">
+                                <button class= "iconbtn " ><i class="fa fa-plus " id="plusBtn"  aria-hidden="true"></i></i></button>
+                            </div>
+                        </div>
+                        <div class="col-md-1 displayto">
+                            <div class="item-price">
+                                <h5>$ <span id="amountTwo">100</span></h5>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-1 displayto">
+                            <div class="item text-right">
+                                <a href="#"  class="item-delete"><i class="fa fa-times" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    
+                </div>
+                <div class="row first-item ">
+
+                    <div class="col-md-6">
+                        <div class="total-items text-left">
+                            <h5>Subtotal</h5>
+                            <h5>Tax</h5>
+                            <h5>Total</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="total-price text-right">
+                            <h5>$ <span id='subTotal'>1200</span></h5>
+                            <h5>Tax</h5>
+                            <h5>$ <span id = "total">1200</span></h5>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="check-out text-right mt-4">
+                            <a href="$" class="btn btn-success">Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+
+       // plus button handler
+       document.getElementById('count-items').value="1";
+        document.getElementById('plusButtons').addEventListener('click',function(){
+
+
+                countingItem('count-items')
+
+                amountIncreasing('amount');
+                amountIncreasing('total');
+                amountIncreasing('subTotal');
+        });
+
+        // second plus button handler
+        document.getElementById('count-item').value="1";
+        document.getElementById('plusBtn').addEventListener('click',function(){
+
+                countingItem('count-item');
+
+                amountIncreasingTwo('amountTwo');
+                amountIncreasingTwo('total');
+                amountIncreasingTwo('subTotal');
+
+        });
+
+        // counting function
+        function countingItem(id){
+
+            const countItem= document.getElementById(id).value;
+            const countItemNumber = parseFloat(countItem);
+            const totalCountItem = countItemNumber + 1;
+                document.getElementById(id).value=totalCountItem;
+        }
+
+
+
+
+        //amount increasing function
+        function amountIncreasing(id){
+
+            const amountIncrease = document.getElementById(id).innerText;
+            const amountIncreaseNumber = parseFloat(amountIncrease);
+            const totalAmountIncrease = amountIncreaseNumber + 1100;
+                document.getElementById(id).innerText=totalAmountIncrease; 
+
+        }
+        //amount increasing function two
+        function amountIncreasingTwo(id){
+
+            const amountIncrease = document.getElementById(id).innerText;
+            const amountIncreaseNumber = parseFloat(amountIncrease);
+            const totalAmountIncrease = amountIncreaseNumber + 100;
+                document.getElementById(id).innerText=totalAmountIncrease; 
+
+        }
+
+
+
+
+        // Minus button handler
+        document.getElementById('minusOne').addEventListener('click',function(){
+
+
+                countItemMinus('count-items')
+
+                amountDecreasing('amount');
+                amountDecreasing('total');
+                amountDecreasing('subTotal');
+        });
+
+        // second Minus button handler
+        document.getElementById('minusTwo').addEventListener('click',function(){
+
+                countItemMinus('count-item');
+
+                amountDecreasingTwo('amountTwo');
+                amountDecreasingTwo('total');
+                amountDecreasingTwo('subTotal');
+
+        });
+
+        // counting Minus
+        function countItemMinus(id){
+
+            const countItem= document.getElementById(id).value;
+            const countItemNumber = parseFloat(countItem);
+            const totalCountItem = countItemNumber - 1;
+                document.getElementById(id).value=totalCountItem;
+        }
+
+
+        
+        //amount Decreasing function
+        function amountDecreasing(id){
+
+            const amountIncrease = document.getElementById(id).innerText;
+            const amountIncreaseNumber = parseFloat(amountIncrease);
+            const totalAmountIncrease = amountIncreaseNumber - 1100;
+                document.getElementById(id).innerText=totalAmountIncrease; 
+
+        }
+        //amount Decreasing function two
+        function amountDecreasingTwo(id){
+
+            const amountIncrease = document.getElementById(id).innerText;
+            const amountIncreaseNumber = parseFloat(amountIncrease);
+            const totalAmountIncrease = amountIncreaseNumber - 100;
+                document.getElementById(id).innerText=totalAmountIncrease; 
+
+        }
+
+    </script>
+
+
+  </body>
+</html>
