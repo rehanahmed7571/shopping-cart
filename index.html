@@ -20,8 +20,8 @@
     <section>
         <div class="main-container">
             <div class="container main mt-5">
-                <div class="row first-item mb-5">
-                   
+                <div id="main-row-element">
+                    <div class="row first-item mb-5">
                         <div class="col-md-4">
                             <div class="shopping-img h-50 w-50">
                                 <img src="img/iphone.png" alt="">
@@ -34,14 +34,14 @@
                         </div>
                         <div class="col-md-2 displayto">
                             <div class="item-count">
-                                <button class= "iconbtn"><i class="fa fa-minus minusBtns" id="minusOne" aria-hidden="true"></i></button>
-                                <input type="text" value="1" id="count-items"  class="items-count">
-                                <button class= "iconbtn "><i class="fa fa-plus plusbtn" id="plusButtons"  aria-hidden="true"></i></i></button>
+                                <button class= "iconbtn" onclick=" productHandelChange('phone',false);"><i class="fa fa-minus minusBtns" id="minusOne" aria-hidden="true"></i></button>
+                                <input type="text" value="1" id="phone-count"  class="items-count">
+                                <button class= "iconbtn" onclick=" productHandelChange('phone',true);"><i class="fa fa-plus plusbtn"  aria-hidden="true"></i></i></button>
                             </div>
                         </div>
                         <div class="col-md-1 displayto">
                             <div class="item-price">
-                                <h5>$<span id="amount">1100</span></h5>
+                                <h5>$<span id="phone-price">1100</span></h5>
                                 
                             </div>
                         </div>
@@ -53,7 +53,6 @@
                     
                 </div>
                 <div class="row first-item mb-5">
-                   
                         <div class="col-md-4">
                             <div class="shopping-img h-50 w-50">
                                 <img src="img/icover.png" alt="">
@@ -61,19 +60,19 @@
                         </div>
                         <div class="col-md-4 displayto">
                             <div class="item-details">
-                                <h5>Iphone slicon case</h5>
+                                <h5>Iphone case</h5>
                             </div>
                         </div>
                         <div class="col-md-2 displayto">
                             <div class="item-count">
-                                <button class= "iconbtn"><i class="fa fa-minus" id="minusTwo" i aria-hidden="true"></i></button>
-                                <input type="text" value="1" id="count-item" class="items-count">
-                                <button class= "iconbtn " ><i class="fa fa-plus " id="plusBtn"  aria-hidden="true"></i></i></button>
+                                <button class= "iconbtn" onclick=" productHandelChange('case',false);" ><i class="fa fa-minus"  i aria-hidden="true"></i></button>
+                                <input type="text" value="1" id="case-count" >
+                                <button class= "iconbtn" onclick=" productHandelChange('case',true);" ><i class="fa fa-plus " aria-hidden="true"></i></i></button>
                             </div>
                         </div>
                         <div class="col-md-1 displayto">
                             <div class="item-price">
-                                <h5>$ <span id="amountTwo">100</span></h5>
+                                <h5>$ <span id="case-price">100</span></h5>
                                 
                             </div>
                         </div>
@@ -83,6 +82,7 @@
                             </div>
                         </div>
                     
+                </div>
                 </div>
                 <div class="row first-item ">
 
@@ -95,9 +95,9 @@
                     </div>
                     <div class="col-md-6">
                         <div class="total-price text-right">
-                            <h5>$ <span id='subTotal'>1200</span></h5>
-                            <h5>Tax</h5>
-                            <h5>$ <span id = "total">1200</span></h5>
+                            <h5>$ <span id='total'>1200</span></h5>
+                            <h5>$ <span id = "tax">0</span></h5>
+                            <h5>$ <span id = "grand-total">1200</span></h5>
                         </div>
                     </div>
                     
@@ -112,11 +112,6 @@
             </div>
         </div>
     </section>
-
-
-
     <script src="cart.js"></script>
-
-
   </body>
 </html>

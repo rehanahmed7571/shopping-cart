@@ -1,110 +1,143 @@
 
-       // plus button handler
-       document.getElementById('count-items').value="1";
-        document.getElementById('plusButtons').addEventListener('click',function(){
+
+    document.getElementById('phone-count').value=1;
+    document.getElementById('case-count').value=1;
+
+    function productHandelChange(product,isIncrease){
+
+    const productInput =productCount(product);
+    console.log(productInput);
+    let productNewNumber = productInput;
+
+    if(isIncrease == true){
+        productNewNumber = productNewNumber + 1;
+    }if(isIncrease == false && productNewNumber > 0){
+        productNewNumber = productNewNumber -1
+    }
+    document.getElementById(product+'-count').value = productNewNumber;
+    let productTotalPrice = 0;
+    if (product == 'phone'){
+
+        productTotalPrice = productNewNumber * 1100
+    }if (product == 'case'){
+        productTotalPrice = productNewNumber * 100
+    }
+    document.getElementById(product +'-price').innerText=productTotalPrice;
+
+    totalPrice();
+    
+    };
 
 
-                countingItem('count-items')
+    function totalPrice(){
+        const phoneNumber = productCount('phone');
+        const caseNumber = productCount('case');
 
-                amountIncreasing('amount');
-                amountIncreasing('total');
-                amountIncreasing('subTotal');
-        });
+        totalPrices = phoneNumber * 1100 + caseNumber * 100;
+        document.getElementById('total').innerText=totalPrices;
 
-        // second plus button handler
-        document.getElementById('count-item').value="1";
-        document.getElementById('plusBtn').addEventListener('click',function(){
+        const tax = Math.round(totalPrices * 0.1)
+        document.getElementById('tax').innerText=tax;
 
-                countingItem('count-item');
+        const grandTotal = tax +totalPrices;
+        document.getElementById('grand-total').innerText=grandTotal;
 
-                amountIncreasingTwo('amountTwo');
-                amountIncreasingTwo('total');
-                amountIncreasingTwo('subTotal');
+    };
 
-        });
+     function productCount(product){
 
-        // counting function
-        function countingItem(id){
+        const productCount = document.getElementById(product + '-count');
+        const productNumber = parseInt(productCount.value);
 
-            const countItem= document.getElementById(id).value;
-            const countItemNumber = parseFloat(countItem);
-            const totalCountItem = countItemNumber + 1;
-                document.getElementById(id).value=totalCountItem;
-        }
+        return productNumber;
+
+    }
+      
 
 
 
 
-        //amount increasing function
-        function amountIncreasing(id){
+// function caseHandelChange(isIncrease){
 
-            const amountIncrease = document.getElementById(id).innerText;
-            const amountIncreaseNumber = parseFloat(amountIncrease);
-            const totalAmountIncrease = amountIncreaseNumber + 1100;
-                document.getElementById(id).innerText=totalAmountIncrease; 
+//     const caseInput = document.getElementById('case-count');
+//     const caseInputNumber = parseInt(caseInput.value);
+//     let caseNewNumber = caseInputNumber
 
-        }
-        //amount increasing function two
-        function amountIncreasingTwo(id){
+//     if(isIncrease == true){
+//         caseNewNumber = caseNewNumber + 1;
+//     }if(isIncrease == false && caseNewNumber > 0){
+//         caseNewNumber = caseNewNumber -1
+//     }
+//     caseInput.value = caseNewNumber;
+//     const caseTotalPrice = caseNewNumber * 100;
+//     document.getElementById('case-price').innerText=caseTotalPrice;
 
-            const amountIncrease = document.getElementById(id).innerText;
-            const amountIncreaseNumber = parseFloat(amountIncrease);
-            const totalAmountIncrease = amountIncreaseNumber + 100;
-                document.getElementById(id).innerText=totalAmountIncrease; 
-
-        }
+// }
 
 
+// function phoneHandleChange(isIncrease){
+
+//     const phoneInput = document.getElementById('phone-count');
+//     const phoneInputNumber = parseInt(phoneInput.value);
+//     let phoneNewTotal = phoneInputNumber
+//     if(isIncrease == true){
+//         phoneNewTotal = phoneNewTotal + 1;
+//     } if (isIncrease == false && phoneNewTotal > 0){
+//         phoneNewTotal = phoneNewTotal - 1;
+//     }
+
+//     phoneInput.value = phoneNewTotal;
+//     phoneTotalPrice = phoneNewTotal * 1100;
+//     document.getElementById('phone-price').innerText = phoneTotalPrice;
+
+// }
 
 
-        // Minus button handler
-        document.getElementById('minusOne').addEventListener('click',function(){
+// document.getElementById('phone-increase').addEventListener('click',function(){
+
+//     const phoneInput = document.getElementById('phone-count');
+//     const phoneInputNumber = parseInt(phoneInput.value);
+//     const phoneTotal = phoneInputNumber + 1;
+//     phoneInput.value = phoneTotal;
+//     phoneTotalPrice = phoneTotal * 1100;
+//     document.getElementById('phone-price').innerText = phoneTotalPrice;
+// })
+// document.getElementById('phone-decrease').addEventListener('click',function(){
+
+//     const phoneInput = document.getElementById('phone-count');
+//     const phoneInputNumber = parseInt(phoneInput.value);
+//     const phoneTotal = phoneInputNumber - 1;
+//     phoneInput.value = phoneTotal;
+//     phoneTotalPrice = phoneTotal * 1100;
+//     document.getElementById('phone-price').innerText = phoneTotalPrice;
+// })
 
 
-                countItemMinus('count-items')
 
-                amountDecreasing('amount');
-                amountDecreasing('total');
-                amountDecreasing('subTotal');
-        });
+// document.getElementById('case-increase').addEventListener('click',function(){
 
-        // second Minus button handler
-        document.getElementById('minusTwo').addEventListener('click',function(){
+//     const caseInput = document.getElementById('case-count');
+//     const caseInputNumber = parseInt(caseInput.value);
+//     const caseTotal = caseInputNumber +  1;
+//     caseInput.value = caseTotal;
+//     const caseTotalPrice = caseTotal * 100;
+//     document.getElementById('case-price').innerText=caseTotalPrice;
 
-                countItemMinus('count-item');
+// })
 
-                amountDecreasingTwo('amountTwo');
-                amountDecreasingTwo('total');
-                amountDecreasingTwo('subTotal');
+// document.getElementById('case-decrease').addEventListener('click',function(){
 
-        });
+//     const caseInput = document.getElementById('case-count');
+//     const caseInputNumber = parseInt(caseInput.value);
+//     const caseTotal = caseInputNumber -  1;
+//     caseInput.value = caseTotal;
+//     const caseTotalPrice = caseTotal * 100;
+//     document.getElementById('case-price').innerText=caseTotalPrice;
 
-        // counting Minus
-        function countItemMinus(id){
-
-            const countItem= document.getElementById(id).value;
-            const countItemNumber = parseFloat(countItem);
-            const totalCountItem = countItemNumber - 1;
-                document.getElementById(id).value=totalCountItem;
-        }
+// })
 
 
-        
-        //amount Decreasing function
-        function amountDecreasing(id){
 
-            const amountIncrease = document.getElementById(id).innerText;
-            const amountIncreaseNumber = parseFloat(amountIncrease);
-            const totalAmountIncrease = amountIncreaseNumber - 1100;
-                document.getElementById(id).innerText=totalAmountIncrease; 
 
-        }
-        //amount Decreasing function two
-        function amountDecreasingTwo(id){
 
-            const amountIncrease = document.getElementById(id).innerText;
-            const amountIncreaseNumber = parseFloat(amountIncrease);
-            const totalAmountIncrease = amountIncreaseNumber - 100;
-                document.getElementById(id).innerText=totalAmountIncrease; 
 
-        }
